@@ -1,0 +1,19 @@
+apiVersion: v1 
+kind: ReplicationController 
+metadata: 
+  name: hn-service 
+spec: 
+  replicas: 3 
+  selector: 
+    app: hn-service-api 
+  template: 
+     metadata: 
+       labels: 
+         app: hn-service-api
+     spec: 
+       containers: 
+       - name:  hn-service-container
+         image: classpathio/hn-service 
+         ports: 
+          - containerPort: 8111
+            protocol: TCP

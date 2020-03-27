@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hn-service-unhealthy
+spec:
+  containers:
+  - image: classpathio/hn-service-unhealthy
+    name: hn-service-unhealthy
+    livenessProbe:
+      httpGet:
+        path: /
+        port: 8111
