@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hn-service-pod-label-gpu
+  labels: 
+    env: dev
+    creation_method: manual
+spec:
+  nodeSelector:
+    gpu: "true"
+  containers:
+  - image: classpathio/hn-service
+    name: hn-service-container
+    ports:
+    - containerPort: 8011
+      protocol: TCP
