@@ -1,0 +1,22 @@
+# ReplicaSets
+Creating a ReplicaSet
+
+```
+apiVersion: apps/v1beta2 
+kind: ReplicaSet 
+metadata: 
+  name: kubia 
+spec: 
+  replicas: 3 
+  selector: 
+    matchLabels: 
+      app: kubia 
+  template: 
+    metadata: 
+      labels: 
+        app: kubia 
+    spec: 
+      containers: 
+      - name: kubia 
+        image: luksa/kubia
+```
