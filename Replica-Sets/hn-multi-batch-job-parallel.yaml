@@ -4,6 +4,7 @@ metadata:
   name: multi-batch-job
 spec:
  completions: 5
+ parallelism: 3
  template:
    metadata:
      labels:
