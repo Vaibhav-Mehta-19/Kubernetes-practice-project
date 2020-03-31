@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: hn-endpoint-service
+spec:
+  ports:
+  - port: 8111
