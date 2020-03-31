@@ -1,0 +1,22 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: multi-batch-job
+spec:
+ completions: 5
+ template:
+   metadata:
+     labels:
+       app: batch-job
+   spec:
+     restartPolicy: OnFailure
+     containers:
+       - name: job
+         image: classpathio/batch-job
+
+
+
+
+     containers:
+      - name: job
+        image: classpathio/batch-job

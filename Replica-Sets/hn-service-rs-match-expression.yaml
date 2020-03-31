@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: hn-service-rs-match-expression
+spec: 
+  replicas: 3
+  selector:
+    matchExpressions: 
+      - key: app
+        operator: In
+        values:
+          - hn-service-api
+  template: 
+    metadata: 
+      labels: 
+        app: hn-service-api
+    spec:
+      containers:
+      - name: hn-service-container
+        image: classpathio/hn-service
