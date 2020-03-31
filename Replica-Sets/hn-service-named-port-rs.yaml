@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: hn-service-named-port-rs
+spec: 
+  replicas: 3
+  selector:
+    matchLabels: 
+      appNname: hn-service
+  template: 
+    metadata: 
+      labels: 
+        appNname: hn-service
+        app: hn-service-named-port
+    spec:
+      containers:
+      - name: hn-service-container
+        ports: 
+          - name: http
+            containerPort: 8111 
+        image: classpathio/hn-service
