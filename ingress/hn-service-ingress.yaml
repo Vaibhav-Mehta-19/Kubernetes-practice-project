@@ -3,10 +3,6 @@ kind: Ingress
 metadata:
   name: hn-service-ingress
 spec:
-  tls:
-  - hosts:
-    - hostnameservice.classpath.com
-    secretName: cafe-secret
   rules:
   - host: hostnameservice.classpath.com
     http:
