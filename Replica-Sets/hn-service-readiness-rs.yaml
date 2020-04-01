@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: hn-service-readinessrs
+spec: 
+  replicas: 3
+  selector:
+    matchLabels: 
+      app: hn-service
+  template: 
+    metadata: 
+      labels: 
+        app: hn-service
+    spec:
+      containers:
+      - name: hn-service-container
+        image: classpathio/hn-service
+        readinessProbe:
+          exec:
+            command:
+            - ls 
+            - /var/ready
