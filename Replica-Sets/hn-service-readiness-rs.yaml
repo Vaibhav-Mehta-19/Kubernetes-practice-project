@@ -6,17 +6,18 @@ spec:
   replicas: 3
   selector:
     matchLabels: 
-      app: hn-service
+      app: nodejs-readiness
   template: 
     metadata: 
       labels: 
-        app: hn-service
+        app: nodejs-readiness
     spec:
       containers:
-      - name: hn-service-container
-        image: classpathio/hn-service
+      - name: nodejs-readiness-container
+        image: classpathio/nodejs-readiness-app
         readinessProbe:
-          exec:
-            command:
-            - ls 
-            - /var/ready
+          httpGet:
+            path: /readiness
+            port: 8080
+          initialDelaySeconds: 300
+          periodSeconds: 30 
