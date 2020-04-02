@@ -11,7 +11,7 @@ spec:
   - host: hostnameservice.classpath.com
     http:
       paths:
-      - path: /
+      - path: /gitrepo
         backend:
           serviceName: git-repo-service
           servicePort: 80
