@@ -4,9 +4,11 @@ metadata:
   name: git-repo-service
 spec:
   ports:
-  - port: 80
+  - name: http
+    port: 80
     targetPort: 8080
-  - port: 443
+  - name: https    
+    port: 443
     targetPort: 8080
   selector:
     app: git-backed-volume
