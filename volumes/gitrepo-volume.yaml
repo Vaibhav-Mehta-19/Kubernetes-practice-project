@@ -16,6 +16,6 @@ spec:
   volumes:
   - name: html
     gitRepo:
-      repository: https://github.com/luksa/kubia-website-example.git
+      repository: https://github.com/prashdeep/kubia-website-example.git
       revision: master
       directory: .
