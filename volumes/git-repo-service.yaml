@@ -3,6 +3,7 @@ kind: Service
 metadata:
   name: git-repo-service
 spec:
+  type: LoadBalancer
   ports:
   - name: http
     port: 80
