@@ -1,14 +1,14 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: hn-service-ingress
+  name: git-repo-ingress
 spec:
   tls:
   - hosts:
-    - hostnameservice.classpath.com
+    - blog.classpath.io
     secretName: cafe-secret
   rules:
-  - host: hostnameservice.classpath.com
+  - host: blog.classpath.io
     http:
       paths:
       - path: /
