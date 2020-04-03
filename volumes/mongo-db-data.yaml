@@ -6,7 +6,7 @@ spec:
   volumes:
   - name: mongodb-data
     awsElasticBlockStore:
-      volumeID: vol-0405367c198592d3f
+      volumeID: vol-09267ef3713fb2ede
       fsType: ext4
   containers:
   - image: mongo
