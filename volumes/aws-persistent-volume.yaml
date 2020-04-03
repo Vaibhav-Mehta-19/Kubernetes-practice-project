@@ -10,5 +10,5 @@ spec:
   - ReadOnlyMany
   persistentVolumeReclaimPolicy: Retain
   awsElasticBlockStore:
-    pdName: mongodb
+    volumeID: vol-058f706e7a75c1795
     fsType: ext4
