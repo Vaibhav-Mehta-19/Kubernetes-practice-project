@@ -1,0 +1,6 @@
+kind: Pod
+spec:
+  containers:
+  - image: classpathio/talking-cow-args
+    args: ["4"]
+

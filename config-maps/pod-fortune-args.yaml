@@ -1,0 +1,7 @@
+kind: Pod
+spec:
+  containers:
+  - image: classpathio/talking-cow-env
+    env:
+    - name: INTERVAL
+      value: 15
