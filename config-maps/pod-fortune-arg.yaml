@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: talkingcow-args
+spec:
+  containers:
+    name: talkingcow-args-args
+  - image: classpathio/talking-cow-args
+    args: ["4"]
+
