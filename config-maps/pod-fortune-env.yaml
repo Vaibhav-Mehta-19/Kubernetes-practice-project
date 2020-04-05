@@ -8,4 +8,4 @@ spec:
     name: talkingcow-env-container
     env:
     - name: INTERVAL
-      value: 15
+      value: "15"
