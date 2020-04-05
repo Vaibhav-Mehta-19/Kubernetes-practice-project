@@ -4,4 +4,4 @@ ADD talkingcow-args.sh /
 
 RUN apk update && apk add --no-cache fortune && chmod +x talkingcow-args.sh
 
-ENTRYPOINT ["fortune"]
+ENTRYPOINT ["/bin/sh", "talkingcow-args.sh"]
