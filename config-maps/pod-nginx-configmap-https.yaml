@@ -36,7 +36,7 @@ spec:
     emptyDir: {}
   - name: config
     configMap:
-      name: nginx-config
+      name: nginx-conf
       items:
       - key: nginx-configuration.conf
         path: https.conf
