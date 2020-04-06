@@ -5,7 +5,7 @@ metadata:
 spec:
   containers:
   - image: nginx:alpine
-    name: webserver
+    name: webserver-config
     volumeMounts:
     - name: configuration
       mountPath: /etc/nginx/conf.d
