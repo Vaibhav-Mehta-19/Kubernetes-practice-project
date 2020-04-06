@@ -21,7 +21,7 @@ spec:
     volumeMounts:
     - name: html
       mountPath: /usr/share/nginx/html
-      readOnly: true
+      readOnly: false
     - name: config
       mountPath: /etc/nginx/conf.d
       readOnly: true
