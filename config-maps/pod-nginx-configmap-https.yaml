@@ -1,6 +1,7 @@
 # Two containers
 # Container one - talkingcow-env
 # Container two - Nginx server with https certificate
+
 apiVersion: v1
 kind: Pod
 metadata:
