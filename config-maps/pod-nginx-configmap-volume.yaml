@@ -4,7 +4,7 @@ metadata:
   name: nginx-configmap-volume
 spec:
   containers:
-  - image: nginx:apline
+  - image: nginx:alpine
     name: webserver
     volumeMounts:
     - name: configuration
