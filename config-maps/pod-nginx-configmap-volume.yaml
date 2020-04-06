@@ -7,13 +7,13 @@ spec:
   - image: nginx:apline
     name: webserver
     volumeMounts:
-        - name: configuration
-          mountPath: /etc/nginx/conf.d
-          readOnly: true
-        ports:
-        - containerPort: 80
-          protocol: TCP
-      volumes:
-      - name: configuration
-        configMap:
-          name: nginx-config
+    - name: configuration
+      mountPath: /etc/nginx/conf.d
+      readOnly: true
+    ports:
+    - containerPort: 80
+      protocol: TCP
+  volumes:
+  - name: configuration
+    configMap:
+      name: nginx-config
