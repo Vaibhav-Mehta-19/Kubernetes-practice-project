@@ -1,3 +1,7 @@
+# Two containers
+# Container one - talkingcow-env
+# Container two - Nginx server with https certificate
+
 apiVersion: v1
 kind: Pod
 metadata:
@@ -5,12 +9,12 @@ metadata:
 spec:
   containers:
   - image: classpathio/talking-cow-env
-    name: html-generator
+    name: talking-cow-container
     env:
     - name: INTERVAL
       valueFrom:
         configMapKeyRef:
-          name: nginx-https
+          name: nginx-conf
           key: sleep-interval
     volumeMounts:
     - name: html
@@ -35,9 +39,9 @@ spec:
     emptyDir: {}
   - name: config
     configMap:
-      name: nginx-https-conf
+      name: nginx-conf
       items:
-      - key: my-nginx-config.conf
+      - key: nginx-configuration.conf
         path: https.conf
   - name: certs
     secret:
