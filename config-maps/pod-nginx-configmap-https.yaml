@@ -29,7 +29,7 @@ spec:
       mountPath: /etc/nginx/certs/
       readOnly: true
     ports:
-    - containerPort: 80
+    - containerPort: 82
     - containerPort: 443
   volumes:
   - name: html
@@ -38,7 +38,7 @@ spec:
     configMap:
       name: nginx-conf
       items:
-      - key: nginx-configuration.conf
+      - key: nginx-configuration-https.conf
         path: https.conf
   - name: certs
     secret:
