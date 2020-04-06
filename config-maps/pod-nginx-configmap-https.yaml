@@ -1,7 +1,6 @@
 # Two containers
 # Container one - talkingcow-env
 # Container two - Nginx server with https certificate
-
 apiVersion: v1
 kind: Pod
 metadata:
@@ -14,11 +13,8 @@ spec:
     - name: INTERVAL
       valueFrom:
         configMapKeyRef:
-          name: nginx-conf
+          name: nginx-config
           key: sleep-interval
-    volumeMounts:
-    - name: html
-      mountPath: /var/htdocs
   - image: nginx:alpine
     name: web-server
     volumeMounts:
@@ -39,7 +35,7 @@ spec:
     emptyDir: {}
   - name: config
     configMap:
-      name: nginx-conf
+      name: nginx-config
       items:
       - key: nginx-configuration.conf
         path: https.conf
