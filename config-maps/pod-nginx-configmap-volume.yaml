@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: talkingcow-configmap-env
+spec:
+  containers:
+  - image: classpathio/talking-cow-env
+    name: talkingcow-env-configmap-container
+    env:
+    - name: INTERVAL
+      valueFrom:
+        configMapKeyRef: 
+          name: fortune-interval-4
+          key: sleep-interval
