@@ -16,4 +16,4 @@ spec:
   volumes:
   - name: configuration
     configMap:
-      name: nginx-config
+      name: nginx-configuration
