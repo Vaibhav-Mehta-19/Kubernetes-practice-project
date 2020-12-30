@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: node-service-replicas
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: node-service-items
+  template:
+    metadata:
+      labels:
+        app: node-service-items
+    spec:
+      containers:
+        - name: node-service-container
+          image: sarvezvran/itemscrudapi
