@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: order-service-pod
+spec:
+  containers:
+  - image: classpathio/orderservice-api:1.0.0
+    name: order-service-container
+    ports:
+    - containerPort: 8222
+    env:
+    - name: SPRING_PROFILES_ACTIVE
+      value: prod
+    volumeMounts:
+    - name: app-config-map
+      mountPath: app/config
+  volumes:
+  - name: app-config-map
+    configMap: 
+      name: order-service-config-map
