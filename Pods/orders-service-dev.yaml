@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: order-service-pod
+  name: order-service-dev-pod
 spec:
   containers:
-  - image: classpathio/order-microservice:1.0.0
+  - image: classpathio/orderservice-api:1.0.0
     name: order-service-container
     ports:
     - containerPort: 8222
@@ -17,4 +17,4 @@ spec:
   volumes:
   - name: app-config-map
     configMap: 
-      name: order-service-cm
+      name: order-service-config-map
