@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: order-microservice-dep
+spec: 
+  replicas: 3
+  selector:
+    matchLabels: 
+      app: order-microservice
+  template: 
+    metadata: 
+      labels: 
+        app: order-microservice
+    spec:
+      containers:
+      - image: classpathio/order-microservice:1.0.0
+        name: order-service-container
+        ports:
+        - containerPort: 8222
+        env:
+        - name: SPRING_PROFILES_ACTIVE
+          value: dev
+        volumeMounts:
+        - name: app-config-map
+          mountPath: app/config
+      volumes:
+      - name: app-config-map
+        configMap: 
+          name: order-service-config-map
