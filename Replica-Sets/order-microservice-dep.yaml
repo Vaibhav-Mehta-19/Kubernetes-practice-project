@@ -15,6 +15,12 @@ spec:
       containers:
       - image: classpathio/order-microservice:4.0.0
         name: order-service-container
+        readinessProbe:
+          httpGet:
+            path: /test
+            port: 8222        
+          initialDelaySeconds: 10  
+          periodSeconds: 5
         ports:
         - containerPort: 8222
         env:
