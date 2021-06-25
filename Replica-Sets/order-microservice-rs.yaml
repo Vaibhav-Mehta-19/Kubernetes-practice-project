@@ -26,4 +26,4 @@ spec:
       volumes:
       - name: app-config-map
         configMap: 
-          name: order-service-config-map
+          name: order-service-cm
