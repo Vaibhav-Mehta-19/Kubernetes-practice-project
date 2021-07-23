@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: order-microservice-rs
+spec: 
+  replicas: 3
+  selector:
+    matchLabels: 
+      app: order-microservice
+  template: 
+    metadata: 
+      labels: 
+        app: order-microservice
+    spec:
+      containers:
+      - image: classpathio/order-service:4.0.0
+        name: order-service-container
+        ports:
+        - containerPort: 8222
