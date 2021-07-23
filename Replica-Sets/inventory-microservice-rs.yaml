@@ -3,7 +3,7 @@ kind: ReplicaSet
 metadata:
   name: inventory-microservice-rs
 spec: 
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels: 
       app: inventory-microservice
@@ -13,7 +13,7 @@ spec:
         app: inventory-microservice
     spec:
       containers:
-      - image: classpathio/inventory-microservice:1.0.0
+      - image: classpathio/inventory-microservice:2.0.0
         name: inventory-microservice-container
         ports:
         - containerPort: 8080

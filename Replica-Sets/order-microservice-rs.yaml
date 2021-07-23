@@ -3,7 +3,7 @@ kind: ReplicaSet
 metadata:
   name: order-microservice-rs
 spec: 
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels: 
       app: order-microservice
@@ -13,7 +13,7 @@ spec:
         app: order-microservice
     spec:
       containers:
-      - image: classpathio/order-microservice:6.0.0
+      - image: classpathio/order-microservice:7.0.0
         name: order-service-container
         ports:
         - containerPort: 8222
