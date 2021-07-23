@@ -1,0 +1,28 @@
+server:
+  port: 8333
+
+#profile
+# spring datasource properties
+
+spring:
+  datasource:
+    username: sa
+    password: welcome
+    url: jdbc:h2:mem:test_mem
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate.format_sql: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      base-path: /manage
+  endpoint:
+    health:
+      show-details: always
+    shutdown:
+      enabled: true
