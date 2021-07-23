@@ -13,7 +13,7 @@ spec:
         app: order-microservice
     spec:
       containers:
-      - image: classpathio/order-microservice:4.0.0
+      - image: classpathio/order-microservice:5.0.0
         name: order-service-container
         ports:
         - containerPort: 8222
