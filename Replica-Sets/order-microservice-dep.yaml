@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: order-microservice-dep
 spec: 
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels: 
       app: order-microservice
@@ -13,15 +13,8 @@ spec:
         app: order-microservice
     spec:
       containers:
-      - image: classpathio/order-microservice:4.0.0
+      - image: classpathio/order-microservice:7.0.0
         name: order-service-container
-        readinessProbe:
-          exec:
-            command:
-            - ls        
-            - /status  
-          initialDelaySeconds: 10  
-          periodSeconds: 5
         ports:
         - containerPort: 8222
         env:
@@ -33,4 +26,4 @@ spec:
       volumes:
       - name: app-config-map
         configMap: 
-          name: order-service-config-map
+          name: order-service-cm

@@ -16,11 +16,11 @@ spec:
   - host: classpath.com
     http:
       paths:
-        - path: /apple
+        - path: /order
           backend:
-            serviceName: apple-service
-            servicePort: 5678
-        - path: /banana
+            serviceName: order-service
+            servicePort: 80
+        - path: /inventory
           backend:
-            serviceName: banana-service
-            servicePort: 5678
+            serviceName: inventory-service
+            servicePort: 81
