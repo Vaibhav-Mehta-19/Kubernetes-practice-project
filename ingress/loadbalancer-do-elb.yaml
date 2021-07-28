@@ -8,7 +8,7 @@ metadata:
      service.beta.kubernetes.io/do-loadbalancer-http-ports: "80"
      service.beta.kubernetes.io/do-loadbalancer-https-ports: "443"
      service.beta.kubernetes.io/do-loadbalancer-enable-proxy-protocol: 'true'
-     service.beta.kubernetes.io/do-loadbalancer-hostname: "cafe.example.com"
+     service.beta.kubernetes.io/do-loadbalancer-hostname: "classpath.com"
 spec:
   type: LoadBalancer
   ports:
